@@ -1,0 +1,92 @@
+{
+  "_args": [
+    [
+      {
+        "name": "mjpeg-stream-server",
+        "raw": "mjpeg-stream-server",
+        "rawSpec": "",
+        "scope": null,
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/ingo/dev/tvHackDay/live-holo/app"
+    ]
+  ],
+  "_from": "mjpeg-stream-server@latest",
+  "_id": "mjpeg-stream-server@1.0.4",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/mjpeg-stream-server",
+  "_nodeVersion": "0.10.31",
+  "_npmUser": {
+    "email": "karolis@kartais.lt",
+    "name": "grinkus"
+  },
+  "_npmVersion": "3.3.12",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "mjpeg-stream-server",
+    "raw": "mjpeg-stream-server",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/mjpeg-stream-server/-/mjpeg-stream-server-1.0.4.tgz",
+  "_shasum": "6a9e7ae1157140a6aa6e7933e6975b17fcecd200",
+  "_shrinkwrap": null,
+  "_spec": "mjpeg-stream-server",
+  "_where": "/home/ingo/dev/tvHackDay/live-holo/app",
+  "author": {
+    "name": "Karolis Grinkus"
+  },
+  "bin": {
+    "mjpeg-stream-server": "index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/grinkus/mjpeg-stream-server/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.3",
+    "http": "0.0.0",
+    "minimist": "~1.2.0"
+  },
+  "description": "Simple stream server piping mjpeg streams to clients.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "6a9e7ae1157140a6aa6e7933e6975b17fcecd200",
+    "tarball": "https://registry.npmjs.org/mjpeg-stream-server/-/mjpeg-stream-server-1.0.4.tgz"
+  },
+  "gitHead": "79c9babcf7c8111d787b8f98758c3b553652f71c",
+  "homepage": "https://github.com/grinkus/mjpeg-stream-server#readme",
+  "keywords": [
+    "mjpeg",
+    "stream",
+    "socket",
+    "server",
+    "client"
+  ],
+  "license": "BSD-2-Clause",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "email": "karolis@kartais.lt",
+      "name": "grinkus"
+    }
+  ],
+  "name": "mjpeg-stream-server",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grinkus/mjpeg-stream-server.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.4"
+}

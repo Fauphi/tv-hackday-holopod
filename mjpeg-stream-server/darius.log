@@ -1,0 +1,17 @@
+darius [12:29 AM] 
+$cmd = sprintf("/usr/bin/wget --timeout 10 -q %s -O - | /usr/bin/stdbuf -i0 -o0 /usr/bin/tee %s%s.mjpg | /usr/bin/stdbuf -i0 -o0 /usr/bin/ffmpeg -loglevel quiet -f mjpeg -i pipe:0 -r %d -f image2 -qscale 4 %s%s 2>/dev/null",
+   $c->url, $c->storage_dir_path, $date, $c->image_refresh_fps, $c->tmp_dir_path, $c->tmp_file_pattern, $c->video_duration_s
+);
+
+darius [12:30 AM]
+as darau sitaip
+
+darius [12:30 AM]
+nu tau rupi sita dalis:
+usr/bin/wget --timeout 10 -q %s -O - | /usr/bin/stdbuf -i0 -o0 /usr/bin/tee %s%s.mjpg
+
+darius [12:31 AM]
+kur %s%s.mjpg nebutinai failas bet gal kazkoks daiktas kuris moka is stdin imti streama
+
+darius [12:32 AM]
+usr/bin/wget --timeout 10 -q  http://phone.ip:8080/video | magic.js

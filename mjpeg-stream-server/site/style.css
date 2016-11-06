@@ -1,0 +1,37 @@
+html, body {
+  background: black; }
+  html img, body img {
+    width: 200px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+  html .img, body .img {
+    position: absolute; }
+  html .front, html .back, html .left, body .front, body .back, body .left {
+    top: 200px;
+    left: 600px; }
+  html .front, body .front {
+    transform: rotateZ(90deg); }
+  html .back, body .back {
+    top: 650px;
+    transform: rotateZ(270deg); }
+  html .left, body .left {
+    top: 400px;
+    left: 900px;
+    transform: rotateZ(180deg); }
+  html .right, body .right {
+    top: 400px;
+    left: 300px;
+    transform: rotateZ(0deg); }
+  html #canvas, body #canvas {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30%;
+    right: 0;
+    width: 50%;
+    height: 100%; }
+  html #video, body #video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -180px 0 0 -240px; }

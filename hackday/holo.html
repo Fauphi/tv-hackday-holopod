@@ -1,0 +1,89 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		  crossorigin="anonymous"></script>
+
+        <script type="text/javascript">
+        	
+        	document.addEventListener('DOMContentLoaded', function(){
+				var v = document.getElementById('video');
+			    var canvas = document.getElementById('canvas');
+			    var context = canvas.getContext('2d');
+			    var back = document.createElement('canvas');
+    			var backcontext = back.getContext('2d');
+    			
+			    var cw, ch;
+
+			    v.crossOrigin = "anonymous";
+			    canvas.crossOrigin = "anonymous";
+			    context.crossOrigin = "anonymous";
+
+			    v.addEventListener('load', function(){
+			    	console.log('asd');
+			    	cw = v.clientWidth;
+			        ch = v.clientHeight;
+			        canvas.width = cw;
+			        canvas.height = ch;
+			        back.width = cw;
+			        back.height = ch;
+			        draw(v,context,backcontext,cw,ch);
+			    },false);
+
+			},false);
+
+			function draw(v,c,bc,cw,ch) {
+			    if(v.paused || v.ended) return false;
+			    // First, draw it into the backing canvas
+			    c.drawImage(v,0,0,cw,ch);
+			    c.getImageData(0,0,cw,ch);
+			    // Grab the pixel data from the backing canvas
+			    var idata = bc.getImageData(0,0,cw,ch);
+			    var data = idata.data;
+			    var w = idata.width;
+			    var limit = data.length;
+			    // Loop through the subpixels, convoluting each using an edge-detection matrix.
+			   for ( var i = 0; i < limit; i += 4 ) {
+					var r = data[i],
+						g = data[i+1],
+						b = data[i+2];
+				
+					if (r < 160 && r > 45 && g < 160 && g > 45 && b < 160 && b > 45) {
+			       		data[i] = 0;
+			       		data[i+1] = 0;
+			       		data[i+2] = 0;
+					} else {
+						data[i] += 30;
+			       		data[i+1] -= 30;
+			       		data[i+2] -= 10;
+					}
+				}
+			    // Draw the pixels onto the visible canvas
+			    c.putImageData(idata,0,0);
+			    setTimeout(draw,20,v,c,bc,cw,ch);
+			}
+
+        </script>
+
+    </head>
+    <body>
+    	<div class="front img">
+    		<canvas id="canvas"></canvas>
+    		<img id="video" src="http://192.168.178.200:8042" cross-origin="anonymous">
+    	</div>
+    	<!-- <div class="right img">
+    		<img id="video" src="http://192.168.178.191:8080/video">
+    	</div>
+    	<div class="back img">
+    		<img id="video" src="http://192.168.178.191:8080/video">
+    	</div>
+    	<div class="left img">
+    		<img id="video" src="http://192.168.178.191:8080/video">
+    	</div> -->
+    </body>
+</html>
